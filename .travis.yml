@@ -5,3 +5,5 @@ services:
 before_install:
   - docker build -t lenin .
 
+script: 
+  - docekr run lenin 
