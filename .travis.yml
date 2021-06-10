@@ -5,5 +5,15 @@ services:
 before_install:
   - docker build -t lenin .
 
-script: 
-  - docker run lenin 
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-test"
+  env: "Dockertest-env"
+  bucket_name: "elasticbeanstalk-us-east-1-132588047328"
+  bucket_path: "docker-test"
+  on:
+    branch: master
+  access_key_id: $Access key ID
+  secret_access_key:
+    secure: "$securte"
