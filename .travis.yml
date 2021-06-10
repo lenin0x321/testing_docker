@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t lenin -f Dockerfile .
+
+script: 
+  - docker run lenin -- --coverage
